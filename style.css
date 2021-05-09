@@ -2,43 +2,130 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
-    background-color:darkcyan;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
+    background-color:black;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
+    background: no-repeat center/100% url(background.body2.jpg);
+    
     display: flex;  /*  ... pour pouvoir utiliser les règles de flex => responsive  */
     flex-direction: column;
     align-items: center;
 }
-.mainContent {   /*! création d'un container à l'intérieur du body;   de manière à ne pas remplir 
+.mainContent {   /*! création d'un conainer à l'intérieur du body;   de manière à ne pas remplir 
     toute la page...  */
-    width: 80%;
+    width: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
 }
+
+a {                         /* règle pour les liens hypertxt  */
+    font-family: cursive;
+    font-size:larger;
+    color:white;
+    text-decoration: none;
+    
+  }
+
+/*a:hover {                 règle pour les liens hypertxt:  transfort° apparence 
+    color:rgb(24, 12, 12);
+    text-decoration:none;  
+    } */
+
+a:hover, a:focus, a:active {    
+    color: red;
+    text-decoration:none;
+}
+
 h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "courier new", monospace;
     color: white;
+    text-shadow: darkorange;   /* ??? */
 }
-.section {
-    display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
-    flex-direction: column;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
-    border: solid 0.2em;
-    border-color: blue;
-    background-color: darkgrey;
-    align-items: center;
 
-
-
-}
 
 .profile {
     display: flex;
     flex-direction: row;
+    border: solid 0.2em;
+    border-color: antiquewhite;
+    background-color: black;
+    align-items: center;
+    align-content: space-between;
+    border-radius: 10px;
+    
 }
+
 .profile ul {    /* règle pour toutes les listes de la class profile */
     font-family: "courier new", monospace;  /*! https://developer.mozilla.org/fr/docs/Web/CSS  :  réf / properties,
     où toutes les propriétés avec lesquelles on peut modifier le html... */
+    font-size: larger;
+    color:red;
+}
+
+.sectionMotivations {
+    display:flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
+    flex-direction:column;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    border: solid 0.2em;
+    border:1px dotted black;
+    border-width:2px;
+    border-style:groove;
+    border-color: antiquewhite;
+    background: no-repeat left/25%  url("Simplon.logo.png");
+    background-color:black;   /* FYI,  NOK si avait été placé avt la propriété background du logo... */
+    align-items:center;
+    border-radius: 10px;
+    font-family: "courier new", monospace;
+    font-size:larger;
+    color:red;
 
 }
-#Hobies {   /* un id rend l'élément unique,  donc écrase la règle de classe */
-border-color: violet;
+
+
+.sectionOnline {
+    display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
+    flex-direction:column;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    border: solid 0.2em;
+    border:1px dotted black;
+    border-width:2px;
+    border-style:groove;
+    border-color: antiquewhite;
+    background-color: cadetblue;
+    color:red;
+    background: no-repeat center/100% url("online.jpg");
+    align-items: center;
+    font-family: "courier new", monospace;
+    font-size:larger;
+    border-radius: 10px;
+
+}
+
+.sectionOnline ul{
+    color:black;
+
+}
+.sectionOnline li{   /* liste à puces alignée à gauche   */
+    list-style-type:disc;float:left;}
+}
+/* pour tentative centrage img,  création d'un container span dans le profil...
+.img-container {
+  text-align: center;
+  display: block;
+} */
+
+
+
+#Hobbies {   /* un id rend l'élément unique,  donc écrase la règle de classe */
+    display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
+    flex-direction:row;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    border: solid 0.2em;
+    border:1px dotted black;
+    border-width:2px;
+    border-style:groove;
+    border-color: antiquewhite;
+    background-color: cadetblue;
+    color:red;
+    
+    align-items: center;
+    border-radius: 10px;
 }
