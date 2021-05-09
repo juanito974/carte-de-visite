@@ -3,7 +3,7 @@ html {
 }
 body {
     background-color:black;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
-    background: center/100% url(background.body2.jpg);
+    background: center/100% url(media/bkpground.body.html.jpg);
     
     display: flex;  /*  ... pour pouvoir utiliser les règles de flex => responsive  */
     flex-direction: column;
@@ -43,6 +43,12 @@ h1 {
     font-family: "courier new", monospace;
     color: white;
     text-shadow: darkorange;   /* ??? */
+}
+
+h2 {
+    font-family: "courier new", monospace;
+    color:red;
+
 }
 
 
@@ -105,7 +111,7 @@ h1 {
     border-color: antiquewhite;
     background-color: cadetblue;
     color:red;
-    background: no-repeat center/100% url("online.jpg");
+    background: no-repeat center/100% url("media/online3.svg");
     align-items: center;
     font-family: "courier new", monospace;
     font-size:larger;
@@ -128,7 +134,7 @@ h1 {
 
 
 
-#Hobbies {   /* un id rend l'élément unique,  donc écrase la règle de classe */
+#hobbies{   /* un id rend l'élément unique,  donc écrase la règle de classe */
     display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
     flex-direction:row;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
     border: solid 0.2em;
@@ -137,8 +143,8 @@ h1 {
     border-style:groove;
     border-color: antiquewhite;
     background-color: cadetblue;
-    color:red;
-    
+    color:red;    
     align-items: center;
     border-radius: 10px;
+    
 }

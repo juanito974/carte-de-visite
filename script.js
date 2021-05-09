@@ -6,7 +6,7 @@ function bigImg(x) {
 }
 
 function normalImg(x) {
-  x.style.height = "60px";
-  x.style.width = "60px";
+  x.style.height = "100px";
+  x.style.width = "100px";
 }
 
