@@ -3,11 +3,13 @@ html {
 }
 body {
     background-color:black;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
-    background: no-repeat center/100% url(background.body2.jpg);
+    background: center/100% url(background.body2.jpg);
     
     display: flex;  /*  ... pour pouvoir utiliser les règles de flex => responsive  */
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .mainContent {   /*! création d'un conainer à l'intérieur du body;   de manière à ne pas remplir 
     toute la page...  */
@@ -65,13 +67,13 @@ h1 {
 
 .sectionMotivations {
     display:flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
-    flex-direction:column;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    flex-direction:row;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
     border: solid 0.2em;
     border:1px dotted black;
     border-width:2px;
     border-style:groove;
     border-color: antiquewhite;
-    background: no-repeat left/25%  url("Simplon.logo.png");
+   /* background: no-repeat left/25%  url("Simplon.logo.png"); */
     background-color:black;   /* FYI,  NOK si avait été placé avt la propriété background du logo... */
     align-items:center;
     border-radius: 10px;
@@ -80,6 +82,17 @@ h1 {
     color:red;
 
 }
+
+.sectionMotivations img{
+    height: 100%;
+    width: auto;
+    }
+
+    .sectionMotivations div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 
 .sectionOnline {
