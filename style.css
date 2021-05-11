@@ -1,49 +1,37 @@
+/*  tester les outils pour la CSS... voir OCR*/
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
     background-color:black;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
-    background: center/100% url(media/bkpground.body.html.jpg);
-    
+    background: center/110% url(media/bkpground.body.html.jpg);
+  
     display: flex;  /*  ... pour pouvoir utiliser les règles de flex => responsive  */
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 95%;  /* pour dégager la scrollbar */
     height: 100%;
 }
 .mainContent {   /*! création d'un conainer à l'intérieur du body;   de manière à ne pas remplir 
     toute la page...  */
-    width: 70%;
-    height: 60%;
+    background: center;
+    width: 65%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
 
 }
 
-a {                         /* règle pour les liens hypertxt  */
-    font-family: cursive;
-    font-size:larger;
-    color:white;
-    text-decoration: none;
-    
-  }
-
-/*a:hover {                 règle pour les liens hypertxt:  transfort° apparence 
-    color:rgb(24, 12, 12);
-    text-decoration:none;  
-    } */
-
-a:hover, a:focus, a:active {    
-    color: red;
-    text-decoration:none;
-}
 
 h1 {
     font-family: "courier new", monospace;
-    color: white;
+    color: white; text-shadow: 1px 1px white, -1px -1px #444
     text-shadow: darkorange;   /* ??? */
-}
+    }
+   
+
+
 
 h2 {
     font-family: "courier new", monospace;
@@ -51,7 +39,19 @@ h2 {
 
 }
 
-
+.monNom {
+    display: flex;
+    flex-direction: row;
+    width: 38%;
+    border: solid 0.2em;
+    border-color: antiquewhite;
+    background-color: black;
+    align-items: center;
+    align-content:center;
+    border-radius: 10px;
+    text-align: center;
+        
+}
 .profile {
     display: flex;
     flex-direction: row;
@@ -64,12 +64,21 @@ h2 {
     
 }
 
-.profile ul {    /* règle pour toutes les listes de la class profile */
+.ul-profile {    /* règle pour toutes les listes de la class profile */
     font-family: "courier new", monospace;  /*! https://developer.mozilla.org/fr/docs/Web/CSS  :  réf / properties,
     où toutes les propriétés avec lesquelles on peut modifier le html... */
     font-size: larger;
     color:red;
+    margin-left: 5em;
+    margin-right:2em;
+    width: 35em;
 }
+
+.profile img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+    }
 
 .sectionMotivations {
     display:flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
@@ -81,26 +90,41 @@ h2 {
     border-color: antiquewhite;
    /* background: no-repeat left/25%  url("Simplon.logo.png"); */
     background-color:black;   /* FYI,  NOK si avait été placé avt la propriété background du logo... */
-    align-items:center;
     border-radius: 10px;
     font-family: "courier new", monospace;
     font-size:larger;
     color:red;
+    align-items:center;
 
 }
 
 .sectionMotivations img{
     height: 100%;
-    width: auto;
+    width: 100%;
     }
 
     .sectionMotivations div{
         display: flex;
         flex-direction: column;
         align-items: center;
+        list-style-type: none;
     }
 
-
+    a {                         /* règle pour les liens hypertxt  */
+        font-family: cursive;
+        font-size:larger;
+        color:white;
+                
+      }    
+    /*a:hover {                 règle pour les liens hypertxt:  transfort° apparence 
+        color:rgb(24, 12, 12);
+        text-decoration:none;  
+        } */    
+    a:hover, a:focus, a:active {    
+        color: red;
+        text-decoration:none;
+    }
+   
 .sectionOnline {
     display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
     flex-direction:column;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
@@ -118,13 +142,12 @@ h2 {
     border-radius: 10px;
 
 }
-
 .sectionOnline ul{
     color:black;
-
 }
+
 .sectionOnline li{   /* liste à puces alignée à gauche   */
-    list-style-type:disc;float:left;}
+    list-style-type:disc;float:left;
 }
 /* pour tentative centrage img,  création d'un container span dans le profil...
 .img-container {
@@ -132,19 +155,17 @@ h2 {
   display: block;
 } */
 
-
-
 #hobbies{   /* un id rend l'élément unique,  donc écrase la règle de classe */
     display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
     flex-direction:row;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    align-items: center;
     border: solid 0.2em;
     border:1px dotted black;
     border-width:2px;
     border-style:groove;
     border-color: antiquewhite;
-    background-color: cadetblue;
+    background-color:black;
     color:red;    
-    align-items: center;
     border-radius: 10px;
     
 }
