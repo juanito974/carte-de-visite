@@ -5,6 +5,11 @@ html {
 body {
     background-color:black;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
     background: center/110% url(media/bkpground.body.html.jpg);
+    /*  no repeat ?   OK ... */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   
     display: flex;  /*  ... pour pouvoir utiliser les règles de flex => responsive  */
     flex-direction: column;
@@ -114,6 +119,7 @@ h2 {
         font-family: cursive;
         font-size:larger;
         color:white;
+        text-decoration: none;
                 
       }    
     /*a:hover {                 règle pour les liens hypertxt:  transfort° apparence 
