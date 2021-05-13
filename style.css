@@ -1,139 +1,143 @@
-/*  tester les outils pour la CSS... voir OCR*/
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
     background-color:black;   /* choix couleurs https://www.w3.org/wiki/CSS/Properties/color/keywords   */
-    background: center/110% url(media/bkpground.body.html.jpg);
-    /*  no repeat ?   OK ... */
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  
+    background: center/105% url(media/bkpground.body.html.jpg);
+    background-repeat: no-repeat;    
     display: flex;  /*  ... pour pouvoir utiliser les règles de flex => responsive  */
     flex-direction: column;
     align-items: center;
     width: 95%;  /* pour dégager la scrollbar */
     height: 100%;
 }
+
 .mainContent {   /*! création d'un conainer à l'intérieur du body;   de manière à ne pas remplir 
     toute la page...  */
-    background: center;
-    width: 65%;
-    height: 80%;
+    width: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
+    padding: 10px 40px 10px 45px;
 }
 
 
 h1 {
     font-family: "courier new", monospace;
-    color: white; text-shadow: 1px 1px white, -1px -1px #444
-    text-shadow: darkorange;   /* ??? */
-    }
-   
-
-
+    color: white; 
+    text-shadow: 3px 3px 30px aqua    
+}   
 
 h2 {
     font-family: "courier new", monospace;
     color:red;
+}
 
+.img{
+    align-items: center;
+    height: 50%;
+    width: 50%;
 }
 
 .monNom {
     display: flex;
     flex-direction: row;
-    width: 38%;
+    width:30%;
     border: solid 0.2em;
     border-color: antiquewhite;
     background-color: black;
-    align-items: center;
-    align-content:center;
     border-radius: 10px;
-    text-align: center;
-        
+    padding: 0 5%;            
 }
+
 .profile {
     display: flex;
     flex-direction: row;
     border: solid 0.2em;
     border-color: antiquewhite;
     background-color: black;
+    border-radius: 10px;
     align-items: center;
     align-content: space-between;
-    border-radius: 10px;
-    
+    margin: 7px 0;    
 }
 
-.ul-profile {    /* règle pour toutes les listes de la class profile */
-    font-family: "courier new", monospace;  /*! https://developer.mozilla.org/fr/docs/Web/CSS  :  réf / properties,
-    où toutes les propriétés avec lesquelles on peut modifier le html... */
+.profile div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ul-profile {    /* règles pour toutes les listes de la class profile */
+    font-family: "courier new", monospace;  
     font-size: larger;
     color:red;
-    margin-left: 5em;
-    margin-right:2em;
-    width: 35em;
-}
+     padding: 0px 15px 0px 0px;
+    width: 40em;
+    }
 
-.profile img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+.profile a {                         
+        font-family: cursive;
+        font-size:larger;
+        color:red;
+        text-decoration:white;
+        font-family: "courier new", monospace;
+        font-size: larger;
+                
+      }    
+      
+.profile a:hover, a:focus, a:active {    
+        color:white;
+        text-decoration:none;
     }
 
 .sectionMotivations {
-    display:flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
-    flex-direction:row;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    display:flex;  /* Règles CSS DIV  SectionMotivations */
+    flex-direction:row;   
     border: solid 0.2em;
     border:1px dotted black;
     border-width:2px;
     border-style:groove;
     border-color: antiquewhite;
    /* background: no-repeat left/25%  url("Simplon.logo.png"); */
-    background-color:black;   /* FYI,  NOK si avait été placé avt la propriété background du logo... */
+    background-color:black;   
     border-radius: 10px;
     font-family: "courier new", monospace;
     font-size:larger;
     color:red;
     align-items:center;
-
-}
-
-.sectionMotivations img{
-    height: 100%;
-    width: 100%;
-    }
+  }
 
     .sectionMotivations div{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        list-style-type: none;
+               
     }
 
-    a {                         /* règle pour les liens hypertxt  */
+    .sectionMotivations li{
+    list-style-image: url("media/puces-simplon.png");
+    /* list-style-type: disclosure-closed; */
+    
+    }
+
+    a {                         
         font-family: cursive;
         font-size:larger;
         color:white;
         text-decoration: none;
                 
       }    
-    /*a:hover {                 règle pour les liens hypertxt:  transfort° apparence 
-        color:rgb(24, 12, 12);
-        text-decoration:none;  
-        } */    
+      
     a:hover, a:focus, a:active {    
         color: red;
         text-decoration:none;
     }
    
 .sectionOnline {
-    display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
-    flex-direction:column;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
+    display: flex;  
+    flex-direction:column;   
     border: solid 0.2em;
     border:1px dotted black;
     border-width:2px;
@@ -146,14 +150,47 @@ h2 {
     font-family: "courier new", monospace;
     font-size:larger;
     border-radius: 10px;
-
+    margin: 7px 0;
+    
 }
+
+.sectionOnline p{
+    font-family: cursive;
+    font-size:larger;
+    color:white;
+
+   
+        animation-duration: .8s;
+        animation-name: clignoter;
+        animation-iteration-count: infinite;
+        transition: none;
+     }
+
+     @keyframes clignoter {
+       0%   { opacity:1; }
+       40%   {opacity:0; }
+       100% { opacity:1; }
+     }
+
+
+    
 .sectionOnline ul{
-    color:black;
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    font-size:larger;
+    color:white;
 }
 
-.sectionOnline li{   /* liste à puces alignée à gauche   */
-    list-style-type:disc;float:left;
+.sectionOnline li{   /* Règles CSS liste à puces DIV  SectionOnline */  */
+    display: block;
+    flex: 0 1 auto; 
+    list-style-type: none;
+    color:white;
 }
 /* pour tentative centrage img,  création d'un container span dans le profil...
 .img-container {
@@ -161,17 +198,27 @@ h2 {
   display: block;
 } */
 
-#hobbies{   /* un id rend l'élément unique,  donc écrase la règle de classe */
-    display: flex;  /*! utilisation des règles flex,  cô flex-direction: ;   */
-    flex-direction:row;   /* tous les éléments de la div section affichés en colonnes du haut vers le bas*/
-    align-items: center;
+#hobbies{   /* un id rend l'élément unique *  Règles CSS DIV  HOBBIES */
+    display: flex;  
+    flex-direction:row;   
+    /* align-items: center; */
     border: solid 0.2em;
     border:1px dotted black;
     border-width:2px;
     border-style:groove;
     border-color: antiquewhite;
     background-color:black;
-    color:red;    
     border-radius: 10px;
-    
+    padding: 5px 50px 5px;
+     
+}
+
+.contentLeft {
+    width: 35%; 
+    float:left
+}
+
+.contentRight {
+    width: 65%;
+    float:right
 }
