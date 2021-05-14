@@ -27,7 +27,7 @@ body {
 h1 {
     font-family: "courier new", monospace;
     color: white; 
-    text-shadow: 3px 3px 30px aqua    
+    text-shadow: 6px 6px 50px aqua;  
 }   
 
 h2 {
@@ -47,7 +47,7 @@ h2 {
     width:30%;
     border: solid 0.2em;
     border-color: antiquewhite;
-    background-color: black;
+    background-color: rgb(26, 25, 25);
     border-radius: 10px;
     padding: 0 5%;            
 }
@@ -78,7 +78,7 @@ h2 {
     width: 40em;
     }
 
-.profile a {                         
+.profile a {       /* règles CSS pour les balises <a> de la section Profile */
         font-family: cursive;
         font-size:larger;
         color:red;
@@ -88,7 +88,7 @@ h2 {
                 
       }    
       
-.profile a:hover, a:focus, a:active {    
+.profile a:hover, a:focus, a:active {       /* règles CSS pour animation des balises <a>  Section Profile */
         color:white;
         text-decoration:none;
     }
@@ -101,7 +101,6 @@ h2 {
     border-width:2px;
     border-style:groove;
     border-color: antiquewhite;
-   /* background: no-repeat left/25%  url("Simplon.logo.png"); */
     background-color:black;   
     border-radius: 10px;
     font-family: "courier new", monospace;
@@ -116,7 +115,7 @@ h2 {
                
     }
 
-    .sectionMotivations li{
+    .sectionMotivations li{               /* règles CSS pour listes à puces Section Motivations */
     list-style-image: url("media/puces-simplon.png");
     /* list-style-type: disclosure-closed; */
     
@@ -159,25 +158,23 @@ h2 {
     font-size:larger;
     color:white;
 
-   
-        animation-duration: .8s;
-        animation-name: clignoter;
-        animation-iteration-count: infinite;
-        transition: none;
-     }
+    animation-duration: .8s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+}
 
-     @keyframes clignoter {
+    @keyframes clignoter {
        0%   { opacity:1; }
        40%   {opacity:0; }
        100% { opacity:1; }
-     }
-
+    }
 
     
 .sectionOnline ul{
     display: flex;
     align-items: stretch; /* Default */
-    justify-content: space-between;
+    justify-content:space-around;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -186,22 +183,18 @@ h2 {
     color:white;
 }
 
-.sectionOnline li{   /* Règles CSS liste à puces DIV  SectionOnline */  */
+.sectionOnline li{   /* Règles CSS liste à puces DIV  SectionOnline */  
     display: block;
     flex: 0 1 auto; 
     list-style-type: none;
     color:white;
 }
-/* pour tentative centrage img,  création d'un container span dans le profil...
-.img-container {
-  text-align: center;
-  display: block;
-} */
+
 
 #hobbies{   /* un id rend l'élément unique *  Règles CSS DIV  HOBBIES */
     display: flex;  
     flex-direction:row;   
-    /* align-items: center; */
+    justify-content:space-between;
     border: solid 0.2em;
     border:1px dotted black;
     border-width:2px;
@@ -221,4 +214,98 @@ h2 {
 .contentRight {
     width: 65%;
     float:right
+}
+
+
+/*                    Règles CSS pour écrans Smartphone      */
+@media (max-width: 640px) {
+	* {
+		box-sizing: border-box;
+	}
+	
+	/* passer body (et tous les éléments de largeur fixe) en largeur automatique */
+
+	body {
+		width: auto;
+		margin: 0;
+		padding: 0;
+	}
+	
+    /*  ***************************************************************************** */
+	/* fixer une largeur maximale de 100% aux éléments potentiellement problématiques */
+    /* ****************************************************************************** */
+
+	img,
+	table,
+	td,
+	blockquote,
+	code,
+	pre,
+	textarea,
+	input,
+	iframe,
+	object,
+	embed,
+	video {
+		max-width: 100%;
+	}
+	
+	/* conserver le ratio des images */
+
+	img {
+		height: auto;
+	}
+	
+	/* gestion des mots longs */
+
+	textarea,
+	table,
+	td,
+	th,
+	code,
+	pre,
+	samp {
+		-webkit-hyphens: auto; /* césure propre */
+		-moz-hyphens: auto;
+		hyphens: auto;
+		word-wrap: break-word; /* passage à la ligne forcé */
+	}
+	
+	code,
+	pre,
+	samp {
+		white-space: pre-wrap; /* passage à la ligne spécifique pour les éléments à châsse fixe */
+	}
+	
+	/* Passer à une seule colonne (à appliquer aux éléments multi-colonnes) */
+
+	.element1,
+	.element2 {
+		float: none;
+		width: auto;
+	}
+	
+	/* masquer les éléments superflus */
+
+	.hide_mobile {
+		display: none !important;
+	}
+	
+	/* Un message personnalisé */
+
+	body:before {
+		content: "Version mobile du site";
+		display: block;
+		text-align: center;
+		font-style: italic;
+		color: #777;
+	}
+}
+La touche finale : réduire de façon harmonieuse toutes les tailles de polices en orientation paysage (car bugguée sur les périphériques iPhone et iPad).
+
+@media (max-device-width:768px) and (orientation: landscape) {
+  html {
+   -webkit-text-size-adjust: 100%;
+   -ms-text-size-adjust: 100%;
+  }
 }
